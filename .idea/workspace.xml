@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="26fcc12c-89ba-495b-ae3a-cf96a0b028ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Calendar.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Calendar/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Calendar/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Calendar/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Calendar/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Calendar/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boards/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boards/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boards/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boards/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boards/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boards/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boards/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boards/services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boards/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boards/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/oxford.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/shift.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/bin/activate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/bin/activate.csh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/bin/activate.fish" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/bin/python" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/bin/python3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="mark@rivertide.co.uk" />
+        <option value="mark" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Uq3ktsAxTAiqwP3MNmvv4NLQt2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Calendar" type="Python.DjangoServer" factoryName="Django server">
+      <module name="Calendar" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="Calendar.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="26fcc12c-89ba-495b-ae3a-cf96a0b028ac" name="Default Changelist" comment="" />
+      <created>1576070444897</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576070444897</updated>
+      <workItem from="1576070454722" duration="19262000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1396" y="189" key="#Calendar" timestamp="1576070505891">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1396" y="189" key="#Calendar/0.23.2560.1417@0.23.2560.1417" timestamp="1576070505891" />
+    <state x="1391" y="333" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576076902802">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1391" y="333" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1417@0.23.2560.1417" timestamp="1576076902802" />
+    <state x="707" y="172" key="CommitChangelistDialog2" timestamp="1576095482964">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="707" y="172" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1576095482964" />
+    <state x="1409" y="386" key="FileChooserDialogImpl" timestamp="1576070740021">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1409" y="386" key="FileChooserDialogImpl/0.23.2560.1417@0.23.2560.1417" timestamp="1576070740021" />
+    <state x="1052" y="530" key="Github.ShareDialog" timestamp="1576095114419">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1052" y="530" key="Github.ShareDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1576095114419" />
+    <state x="1017" y="324" key="Github.UntrackedFilesDialog" timestamp="1576095091487">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1017" y="324" key="Github.UntrackedFilesDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1576095091487" />
+    <state width="1755" height="271" key="GridCell.Tab.0.bottom" timestamp="1576095217216">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1755" height="271" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1576095217216" />
+    <state width="1755" height="271" key="GridCell.Tab.0.center" timestamp="1576095217215">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1755" height="271" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1576095217215" />
+    <state width="1755" height="271" key="GridCell.Tab.0.left" timestamp="1576095217215">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1755" height="271" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1576095217215" />
+    <state width="1755" height="271" key="GridCell.Tab.0.right" timestamp="1576095217216">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1755" height="271" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1576095217216" />
+    <state width="1755" height="334" key="GridCell.Tab.1.bottom" timestamp="1576080521627">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1755" height="334" key="GridCell.Tab.1.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1576080521627" />
+    <state width="1755" height="334" key="GridCell.Tab.1.center" timestamp="1576080521627">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1755" height="334" key="GridCell.Tab.1.center/0.23.2560.1417@0.23.2560.1417" timestamp="1576080521627" />
+    <state width="1755" height="334" key="GridCell.Tab.1.left" timestamp="1576080521626">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1755" height="334" key="GridCell.Tab.1.left/0.23.2560.1417@0.23.2560.1417" timestamp="1576080521626" />
+    <state width="1755" height="334" key="GridCell.Tab.1.right" timestamp="1576080521627">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1755" height="334" key="GridCell.Tab.1.right/0.23.2560.1417@0.23.2560.1417" timestamp="1576080521627" />
+    <state x="1130" y="262" key="SettingsEditor" timestamp="1576070748964">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1130" y="262" key="SettingsEditor/0.23.2560.1417@0.23.2560.1417" timestamp="1576070748964" />
+  </component>
+</project>

@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="get">
+       {{ form.as_p }}
+       <button type="submit">search</button>
+    </form>
+<br>
+
+{% if search_result %}
+        <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Shift</th>
+          </tr>
+        </thead>
+        <tbody>
+    {% for x in search_result %}
+    <tr>
+        <td class="align-left">
+            {{ x.firstName }}
+        </td>
+        <td class="align-left">
+           {{ x.lastName }}
+        </td>
+
+        <td class="align-left">
+           {{ x.shift }}
+        </td>
+    </tr>
+    {% endfor %}
+
+    </table>
+    {% else %}
+      <p><em>{{ search_result.message }}</em></p>
+    {% endif %}
+
+{% endblock %}
