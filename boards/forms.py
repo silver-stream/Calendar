@@ -1,15 +1,23 @@
 import json
 
+from bootstrap_datepicker_plus import DatePickerInput
 from django import forms
 from django.conf import settings
 import requests
 import logging
+
+from django.forms import ModelForm
+
+
 try:
     import http.client as http_client
 except ImportError:
     # Python 2
     import httplib as http_client
 #http_client.HTTPConnection.debuglevel = 1
+
+
+
 
 
 class DictionaryForm(forms.Form):
@@ -40,7 +48,8 @@ class DictionaryForm(forms.Form):
 
 class FindMyShiftForm(forms.Form):
 
-    word = forms.CharField(max_length=100)
+    #word = forms.CharField(max_length=100)
+    word = forms.DateField(widget=DatePickerInput(format='%Y-%m-%d', attrs={'width': '20px'}))
 
     def search(self):
         result = {}

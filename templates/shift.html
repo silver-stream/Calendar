@@ -1,12 +1,12 @@
 
 {% extends 'base.html' %}
-
 {% block content %}
     <form method="get">
        {{ form.as_p }}
+       {{ form.media }}  {# Adds date-picker required JS and CSS #}
        <button type="submit">search</button>
     </form>
-<br>
+    <br>
 
 {% if search_result %}
         <table class="table">

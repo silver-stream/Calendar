@@ -1,9 +1,15 @@
-{% load static %}<!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>{% block title %}Find My Shift {% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/local.css' %}">
+     {% load bootstrap4 %}       {# import bootstrap4/bootstrap3 #}
+     {% bootstrap_css %}         {# Embed Bootstrap CSS #}
+     {% bootstrap_javascript jquery='full' %}  {# Embed Bootstrap JS+jQuery #}
+     {% bootstrap_messages %}
   </head>
   <body>
     <div class="container">

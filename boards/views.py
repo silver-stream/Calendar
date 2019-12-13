@@ -4,6 +4,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponse
 from django.shortcuts import render
+
+from django.views.generic import CreateView
+
 from .models import Board
 import urllib
 import json
@@ -11,11 +14,10 @@ import json
 from django.shortcuts import render
 from .forms import DictionaryForm, FindMyShiftForm
 
+
 def home(request):
     boards = Board.objects.all()
     return render(request, 'home.html', {'boards': boards})
-
-
 
 def oxford(request):
     search_result = {}
