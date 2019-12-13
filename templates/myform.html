@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<form method="post" novalidate>
+  {% csrf_token %}
+  {{ form.media }}
+  <table border="1">
+    {{ form }}
+  </table>
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}
+
