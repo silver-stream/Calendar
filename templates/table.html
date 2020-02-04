@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<table class="table table-sm table-hover table-bordered">
+    <thead class="thead-light">
+        <tr>
+            {% for k in header %}
+            <th>{{k.description}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in rows %}
+            <tr>
+                <td>{{r.id}}</td>
+                <td>{{r.chemblid}}</td>
+                <td>{{r.prefName}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

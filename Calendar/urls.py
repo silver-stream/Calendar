@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^$', views.shift, name='home'),
     path('admin/', admin.site.urls),
     path('oxford/',views.oxford),
-    path('shift/',views.shift)
+    path('shift/',views.shift),
+    path('table/',views.table)
 ]

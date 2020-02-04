@@ -5,9 +5,11 @@ from django.http import HttpResponse
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from django.views.generic import CreateView
+from django.views.generic import CreateView, TemplateView
 
 from .models import Board
+from .models import Category
+
 import urllib
 import json
 
@@ -39,3 +41,14 @@ def shift(request):
     else:
         form = FindMyShiftForm()
     return render(request, 'shift.html', {'form': form, 'search_result': search_result})
+
+def table(request):
+
+    headers = Category.objects.all()
+    #headers = ['ID','Data','Code']
+    rows = [{'id': 1, 'chemblid': 'bbbbbbbb','prefName': 'A'},
+            {'id': 2, 'chemblid': 234, 'prefName': 'B'},
+            {'id': 3, 'chemblid': 23454, 'prefName': 'C'},
+            {'id': 4, 'chemblid': 6456, 'prefName': 'D'}]
+
+    return render(request, 'table.html', {'header': headers, 'rows': rows})

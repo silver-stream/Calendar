@@ -31,3 +31,8 @@ class Post(models.Model):
     updated_by = models.ForeignKey(User, null=True, related_name='+', on_delete=models.CASCADE)
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=30, unique=True)
+    description = models.CharField(max_length=255)
+
+
