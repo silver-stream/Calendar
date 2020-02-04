@@ -17,6 +17,32 @@ except ImportError:
 #http_client.HTTPConnection.debuglevel = 1
 
 
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=30)
+    email = forms.EmailField(max_length=254)
+    date = forms.DateField(widget=DatePickerInput(format='%Y-%m-%d'))
+
+    message = forms.CharField(
+        max_length=2000,
+        widget=forms.Textarea(),
+        help_text='Write here your message!'
+    )
+    source = forms.CharField(       # A hidden input for internal use
+        max_length=50,              # tell from which page the user sent the message
+        widget=forms.HiddenInput()
+    )
+
+    def clean(self):
+        cleaned_data = super(ContactForm, self).clean()
+        name = cleaned_data.get('name')
+        email = cleaned_data.get('email')
+        message = cleaned_data.get('message')
+        date = cleaned_data.get('date')
+        if not name and not email and not message:
+            raise forms.ValidationError('You have to write something!')
+
+
+
 
 
 
@@ -68,21 +94,27 @@ class FindMyShiftForm(forms.Form):
         endpoint = 'https://www.findmyshift.com/api/1.1/reports/shifts'
         headers = {'apiKey': settings.FINDMYSHIFT_APP_ID, 'teamId': settings.FIND_MY_SHIFT_TEAM_ID, 'from':word,'to':word }
         response = requests.get(endpoint,headers)
-        print(response.request.headers)
-        print(response.status_code)
+        #print(response.request.headers)
+        #print(response.status_code)
 
 
 
         if response.status_code == 200:  # SUCCESS
             result = response.json()
+            if  not result:
+                result = [1]
+                result[0]={'firstName':'No data found.'}
 
-            result[0]['success']= True
-            print(json.dumps(result, indent=4, sort_keys=True))
+
+            #print(result)
+            #print(json.dumps(result, indent=4, sort_keys=True))
             #result['success'] = True
+
         else:
-            result['success'] = False
+            result = [1]
             if response.status_code == 404:  # NOT FOUND
-                result['message'] = 'No entry found for "%s "' % url
+                result[0]={'firstName':'Error : No data found.'}
             else:
-                result['message'] = 'The FindMyShift API is not available at the moment. Please try again later.'
+                result[0]= 'The FindMyShift API is not available at the moment. Please try again later.'
         return result
+

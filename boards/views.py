@@ -17,6 +17,19 @@ from django.shortcuts import render
 from .forms import DictionaryForm, FindMyShiftForm
 
 
+from django.shortcuts import render
+from .forms import ContactForm
+
+def myform(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            pass  # does nothing, just trigger the validation
+    else:
+        form = ContactForm()
+    return render(request, 'myform.html', {'form': form})
+
+
 def home(request):
     boards = Board.objects.all()
     return render(request, 'home.html', {'boards': boards})
