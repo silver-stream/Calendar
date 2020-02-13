@@ -24,6 +24,9 @@ from .forms import DictionaryForm, FindMyShiftForm
 from django.shortcuts import render
 from .forms import ContactForm
 
+
+from django.contrib.auth.decorators import login_required
+
 def myform(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -33,7 +36,7 @@ def myform(request):
         form = ContactForm()
     return render(request, 'myform.html', {'form': form})
 
-
+@login_required
 def home(request):
     boards = Board.objects.all()
     return render(request, 'home.html', {'boards': boards})
@@ -48,7 +51,7 @@ def oxford(request):
         form = DictionaryForm()
     return render(request, 'oxford.html', {'form': form, 'search_result': search_result})
 
-
+@login_required
 def shift(request):
     search_result = {}
     if 'word' in request.GET:
@@ -68,7 +71,7 @@ def table(request):
     end_time_delta = datetime.timedelta(hours=12)
     dtstart = datetime.datetime.combine(dt.date(), start_time.time())
     dtend = dtstart + end_time_delta
-    time_delta=datetime.timedelta(minutes=30)
+    time_delta=datetime.timedelta(minutes=15)
     print(start_time)
     print(end_time_delta)
     print(dtstart)
@@ -77,10 +80,10 @@ def table(request):
 
 
 
-    timeslots = {}
+    timeslots = []
     n = dtstart
     while n <= dtend:
-        timeslots[n] = {'id': 1, 'chemblid': 'bbbbbbbb','prefName': 'A'}
+        timeslots.append( {'id':n.strftime("%H:%M"), 'chemblid': 'test','prefName': 'A'})
         n += time_delta
 
     rows=[]
@@ -96,6 +99,15 @@ def table(request):
             {'id': 3, 'chemblid': 23454, 'prefName': 'C'},
             {'id': 4, 'chemblid': 6456, 'prefName': 'D'}]
 
-    print(rows)
+    print(timeslots)
 
     return render(request, 'table.html', {'header': headers, 'rows': timeslots})
+
+
+def day_view(request, year, month, day, template='daily_view.html', **params):
+    '''
+    See documentation for function``_datetime_view``.
+
+    '''
+    dt = datetime(int(year), int(month), int(day))
+    return _datetime_view(request, template, dt, **params)
