@@ -110,4 +110,5 @@ def day_view(request, year, month, day, template='daily_view.html', **params):
 
     '''
     dt = datetime(int(year), int(month), int(day))
-    return _datetime_view(request, template, dt, **params)
+
+    return render(request, 'day-view.html', {'date': dt})
