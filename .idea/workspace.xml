@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="26fcc12c-89ba-495b-ae3a-cf96a0b028ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calendar/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Calendar/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boards/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/boards/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/table.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/day-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/day-view.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +121,7 @@
       <workItem from="1576246260948" duration="1789000" />
       <workItem from="1580819040307" duration="17092000" />
       <workItem from="1581488652208" duration="7046000" />
-      <workItem from="1581594304698" duration="1468000" />
+      <workItem from="1581594304698" duration="1739000" />
     </task>
     <task id="LOCAL-00001" summary="added calendar">
       <created>1576239252828</created>
@@ -153,7 +151,28 @@
       <option name="project" value="LOCAL" />
       <updated>1581594341881</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added calendar">
+      <created>1581595819954</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1581595819954</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added calendar">
+      <created>1581595875875</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1581595875875</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added calendar">
+      <created>1581595992789</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1581595992789</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,10 +244,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="523" y="368" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1440.877@0.23.1440.877" timestamp="1576184368749" />
-    <state x="398" y="105" key="CommitChangelistDialog2" timestamp="1581595875679">
+    <state x="398" y="105" key="CommitChangelistDialog2" timestamp="1581595992598">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="398" y="105" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1581595875679" />
+    <state x="398" y="105" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1581595992598" />
     <state x="707" y="172" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1576095482964" />
     <state x="793" y="248" key="FileChooserDialogImpl" timestamp="1576096969346">
       <screen x="0" y="23" width="1440" height="877" />
@@ -292,10 +311,10 @@
     </state>
     <state x="458" y="171" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1580827559960" />
     <state x="1130" y="262" key="SettingsEditor/0.23.2560.1417@0.23.2560.1417" timestamp="1576070748964" />
-    <state x="310" y="183" key="Vcs.Push.Dialog.v2" timestamp="1581595886863">
+    <state x="310" y="183" key="Vcs.Push.Dialog.v2" timestamp="1581596007244">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="310" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1581595886863" />
+    <state x="310" y="183" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1581596007244" />
     <state x="893" y="224" width="670" height="676" key="search.everywhere.popup" timestamp="1581499751512">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
