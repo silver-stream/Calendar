@@ -24,9 +24,7 @@ urlpatterns = [
     path('oxford/',views.oxford),
     path('shift/',views.shift,name='shift'),
     path('table/',views.table),
-    url(
-        r'^calendar/(\d{4})/(0?[1-9]|1[012])/([0-3]?\d)/$',
+    url(r'^table/(\d{4})/(0?[1-9]|1[012])/([0-3]?\d)/$',
         views.day_view,
-        name='day-view'
-    )
+        name='day-view'),
 ]

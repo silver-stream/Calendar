@@ -1,8 +1,6 @@
-
 from django.shortcuts import render
 
 import datetime
-
 
 # Create your views here.
 from django.http import HttpResponse
@@ -20,12 +18,11 @@ import json
 from django.shortcuts import render
 from .forms import DictionaryForm, FindMyShiftForm
 
-
 from django.shortcuts import render
 from .forms import ContactForm
 
-
 from django.contrib.auth.decorators import login_required
+
 
 def myform(request):
     if request.method == 'POST':
@@ -36,10 +33,12 @@ def myform(request):
         form = ContactForm()
     return render(request, 'myform.html', {'form': form})
 
+
 @login_required
 def home(request):
     boards = Board.objects.all()
     return render(request, 'home.html', {'boards': boards})
+
 
 def oxford(request):
     search_result = {}
@@ -50,6 +49,7 @@ def oxford(request):
     else:
         form = DictionaryForm()
     return render(request, 'oxford.html', {'form': form, 'search_result': search_result})
+
 
 @login_required
 def shift(request):
@@ -62,6 +62,7 @@ def shift(request):
         form = FindMyShiftForm()
     return render(request, 'shift.html', {'form': form, 'search_result': search_result})
 
+
 def table(request):
     interval = 30
 
@@ -71,30 +72,28 @@ def table(request):
     end_time_delta = datetime.timedelta(hours=12)
     dtstart = datetime.datetime.combine(dt.date(), start_time.time())
     dtend = dtstart + end_time_delta
-    time_delta=datetime.timedelta(minutes=15)
+    time_delta = datetime.timedelta(minutes=15)
     print(start_time)
     print(end_time_delta)
     print(dtstart)
     print(dtend)
     print(time_delta)
 
-
-
     timeslots = []
     n = dtstart
     while n <= dtend:
-        timeslots.append( {'id':n.strftime("%H:%M"), 'chemblid': 'test','prefName': 'A'})
+        timeslots.append({'id': n.strftime("%H:%M"), 'chemblid': 'test', 'prefName': 'A', 'dt': n})
         n += time_delta
 
-    rows=[]
-    #for rowkey in sorted(timeslots):
+    rows = []
+    # for rowkey in sorted(timeslots):
     #    for colkey in rowkey:
     #        print (colkey)
 
     headers = Category.objects.all()
-    #headers = ['ID','Data','Code']
+    # headers = ['ID','Data','Code']
 
-    rows = [{'id': 1, 'chemblid': 'bbbbbbbb','prefName': 'A'},
+    rows = [{'id': 1, 'chemblid': 'bbbbbbbb', 'prefName': 'A'},
             {'id': 2, 'chemblid': 234, 'prefName': 'B'},
             {'id': 3, 'chemblid': 23454, 'prefName': 'C'},
             {'id': 4, 'chemblid': 6456, 'prefName': 'D'}]
@@ -104,11 +103,11 @@ def table(request):
     return render(request, 'table.html', {'header': headers, 'rows': timeslots})
 
 
-def day_view(request, year, month, day, template='daily_view.html', **params):
+def day_view(request, year, month, day, template='day-view.html', **params):
     '''
     See documentation for function``_datetime_view``.
 
     '''
-    dt = datetime(int(year), int(month), int(day))
+    dt = datetime.datetime(int(year), int(month), int(day))
 
-    return render(request, 'day-view.html', {'date': dt})
+    return render(request, 'day-view.html', {'dt': dt})

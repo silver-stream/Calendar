@@ -12,8 +12,8 @@
     <tbody>
         {% for r in rows %}
             <tr>
-                <td><a href="{% url 'shift' %}">{{r.id}}</a></td>
-                <td>{{r.chemblid}}</td>
+                <td><a href="{% url 'day-view'  r.dt|date:'Y' r.dt|date:'m' r.dt|date:'d' %}">{{r.id}}</a></td>
+                <td>{{r.dt|date:'d/m/Y'}}</td>
                 <td>{{r.prefName}}</td>
             </tr>
         {% endfor %}
