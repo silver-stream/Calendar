@@ -12,7 +12,7 @@
     <tbody>
         {% for r in rows %}
             <tr>
-                <td>{{r.id}}</td>
+                <td><a href="{% url 'shift' %}">{{r.id}}</a></td>
                 <td>{{r.chemblid}}</td>
                 <td>{{r.prefName}}</td>
             </tr>
