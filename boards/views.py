@@ -1,6 +1,10 @@
+import logging
+
+from dateutil.parser import parser
 from django.shortcuts import render
 
-import datetime
+from datetime import datetime, timedelta, time
+
 
 # Create your views here.
 from django.http import HttpResponse
@@ -34,7 +38,7 @@ def myform(request):
     return render(request, 'myform.html', {'form': form})
 
 
-@login_required
+
 def home(request):
     boards = Board.objects.all()
     return render(request, 'home.html', {'boards': boards})
@@ -51,7 +55,7 @@ def oxford(request):
     return render(request, 'oxford.html', {'form': form, 'search_result': search_result})
 
 
-@login_required
+
 def shift(request):
     search_result = {}
     if 'word' in request.GET:
@@ -66,13 +70,13 @@ def shift(request):
 def table(request):
     interval = 30
 
-    dt = datetime.datetime.now()
+    dt = datetime.now()
     start_time = dt
     start_time = start_time.replace(hour=9, minute=0, second=0, microsecond=0)
-    end_time_delta = datetime.timedelta(hours=12)
-    dtstart = datetime.datetime.combine(dt.date(), start_time.time())
+    end_time_delta = timedelta(hours=12)
+    dtstart = datetime.combine(dt.date(), start_time.time())
     dtend = dtstart + end_time_delta
-    time_delta = datetime.timedelta(minutes=15)
+    time_delta = timedelta(minutes=15)
     print(start_time)
     print(end_time_delta)
     print(dtstart)
@@ -108,6 +112,58 @@ def day_view(request, year, month, day, template='day-view.html', **params):
     See documentation for function``_datetime_view``.
 
     '''
-    dt = datetime.datetime(int(year), int(month), int(day))
-
+    dt = datetime(int(year), int(month), int(day))
     return render(request, 'day-view.html', {'dt': dt})
+
+def add_event(
+    request,
+    template='add-event.html',
+#    event_form_class=forms.EventForm,
+):
+    '''
+    Add a new ``Event`` instance and 1 or more associated ``Occurrence``s.
+
+    Context parameters:
+
+    ``dtstart``
+        a datetime.datetime object representing the GET request value if present,
+        otherwise None
+
+    ``event_form``
+        a form object for updating the event
+
+    ``recurrence_form``
+        a form object for adding occurrences
+
+    '''
+    dtstart = None
+    if request.method == 'POST':
+        x=1
+        # event_form = event_form_class(request.POST)
+        # recurrence_form = recurrence_form_class(request.POST)
+        #if event_form.is_valid() and recurrence_form.is_valid():
+         #   event = event_form.save()
+         #   recurrence_form.save(event)
+         #   return http.HttpResponseRedirect(event.get_absolute_url())
+
+    else:
+        if 'dtstart' in request.GET:
+            try:
+                dtstart = datetime.strptime(request.GET['dtstart'], "%Y-%m-%dT%H:%M:%S")
+
+            except(TypeError, ValueError) as exc:
+                # TODO: A badly formatted date is passed to add_event
+                logging.warning(exc)
+
+
+
+        dtstart = dtstart or datetime.now()
+
+        #event_form = event_form_class()
+        #recurrence_form = recurrence_form_class(initial={'dtstart': dtstart})
+
+    return render(
+        request,
+        template,
+        {'dtstart': dtstart}
+    )
