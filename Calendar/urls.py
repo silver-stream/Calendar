@@ -19,7 +19,7 @@ from boards import views
 from django.conf.urls import url
 
 urlpatterns = [
-    url(r'^$', views.shift, name='home'),
+    url(r'^$', views.table, name='home'),
     path('admin/', admin.site.urls),
     path('oxford/',views.oxford),
     path('shift/',views.shift,name='shift'),
@@ -27,4 +27,11 @@ urlpatterns = [
     url(r'^table/(\d{4})/(0?[1-9]|1[012])/([0-3]?\d)/$',
         views.day_view,
         name='day-view'),
+    url(
+        r'^events/add/$',
+        views.add_event,
+        name='add-event'
+    ),
 ]
+
+
