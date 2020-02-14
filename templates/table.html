@@ -13,7 +13,8 @@
         {% for r in rows %}
             <tr>
                 <td><a href="{% url 'day-view'  r.dt|date:'Y' r.dt|date:'m' r.dt|date:'d' %}">{{r.id}}</a></td>
-                <td>{{r.dt|date:'d/m/Y'}}</td>
+                <td><a href="{% url 'add-event' %}?dtstart={{ r.dt.isoformat }}">{{ r.dt|date:"h:i a" }}</a></td>
+                <!--td>{{r.dt|date:'d/m/Y'}}</td-->
                 <td>{{r.prefName}}</td>
             </tr>
         {% endfor %}
