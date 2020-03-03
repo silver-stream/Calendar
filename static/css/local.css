@@ -3,3 +3,13 @@
     width: 50px;
     height: 35px;
 }
+
+.table-hover-cell>tbody>tr>td:hover, .table-hover>tbody>tr>td:hover{
+        background-color: #efefef!important;
+    }
+
+
+.table-hover-cell>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th{
+        background-color: inherit;
+    }
+

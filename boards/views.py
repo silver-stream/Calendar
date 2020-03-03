@@ -1,10 +1,17 @@
 import logging
+from django_pandas.io import read_frame
 
-from dateutil.parser import parser
+from django.db import connections
+from django.db.utils import DEFAULT_DB_ALIAS, load_backend
+
+import plotly.offline as opy
+import plotly.graph_objs as go
+import pandas as pd
+
+import pandas as pd
 from django.shortcuts import render
 
 from datetime import datetime, timedelta, time
-
 
 # Create your views here.
 from django.http import HttpResponse
@@ -15,6 +22,8 @@ from django.views.generic import CreateView, TemplateView
 
 from .models import Board
 from .models import Category
+
+from .models import Wind
 
 import urllib
 import json
@@ -38,7 +47,6 @@ def myform(request):
     return render(request, 'myform.html', {'form': form})
 
 
-
 def home(request):
     boards = Board.objects.all()
     return render(request, 'home.html', {'boards': boards})
@@ -53,7 +61,6 @@ def oxford(request):
     else:
         form = DictionaryForm()
     return render(request, 'oxford.html', {'form': form, 'search_result': search_result})
-
 
 
 def shift(request):
@@ -115,10 +122,11 @@ def day_view(request, year, month, day, template='day-view.html', **params):
     dt = datetime(int(year), int(month), int(day))
     return render(request, 'day-view.html', {'dt': dt})
 
+
 def add_event(
-    request,
-    template='add-event.html',
-#    event_form_class=forms.EventForm,
+        request,
+        template='add-event.html',
+        #    event_form_class=forms.EventForm,
 ):
     '''
     Add a new ``Event`` instance and 1 or more associated ``Occurrence``s.
@@ -138,13 +146,13 @@ def add_event(
     '''
     dtstart = None
     if request.method == 'POST':
-        x=1
+        x = 1
         # event_form = event_form_class(request.POST)
         # recurrence_form = recurrence_form_class(request.POST)
-        #if event_form.is_valid() and recurrence_form.is_valid():
-         #   event = event_form.save()
-         #   recurrence_form.save(event)
-         #   return http.HttpResponseRedirect(event.get_absolute_url())
+        # if event_form.is_valid() and recurrence_form.is_valid():
+        #   event = event_form.save()
+        #   recurrence_form.save(event)
+        #   return http.HttpResponseRedirect(event.get_absolute_url())
 
     else:
         if 'dtstart' in request.GET:
@@ -155,15 +163,33 @@ def add_event(
                 # TODO: A badly formatted date is passed to add_event
                 logging.warning(exc)
 
-
-
         dtstart = dtstart or datetime.now()
 
-        #event_form = event_form_class()
-        #recurrence_form = recurrence_form_class(initial={'dtstart': dtstart})
+        # event_form = event_form_class()
+        # recurrence_form = recurrence_form_class(initial={'dtstart': dtstart})
 
     return render(
         request,
         template,
         {'dtstart': dtstart}
     )
+
+
+def graph(request):
+
+    wf = Wind.objects.all()
+    df = read_frame(wf)
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=df.created_at, y=df['wind_speed'], name="Windspeed",
+                             line_color='deepskyblue'))
+
+    fig.add_trace(go.Scatter(x=df.created_at, y=df['highest_gust'], name="Gustspeed",
+                             line_color='dimgray'))
+
+    fig.update_layout(title_text='Wind Speed',
+                      xaxis_rangeslider_visible=True)
+
+    div = opy.plot(fig, auto_open=False, output_type='div')
+
+    return render(request, 'graph.html', {'graph': div})

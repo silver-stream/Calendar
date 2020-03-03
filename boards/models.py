@@ -1,3 +1,5 @@
+from datetime import timezone, datetime
+
 from django.db import models
 
 # Create your models here.
@@ -34,5 +36,12 @@ class Post(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=30, unique=True)
     description = models.CharField(max_length=255)
+
+
+class Wind(models.Model):
+    created_at = models.DateTimeField(default=datetime.now, blank=True)
+    wind_speed = models.IntegerField(null=False)
+    highest_gust = models.IntegerField(null=False)
+
 
 
