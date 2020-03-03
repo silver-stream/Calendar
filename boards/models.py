@@ -1,4 +1,4 @@
-from datetime import timezone, datetime
+from datetime import datetime
 
 from django.db import models
 
@@ -7,6 +7,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from django.db import models
+from django.utils import timezone
 
 
 class Board(models.Model):
@@ -39,7 +40,7 @@ class Category(models.Model):
 
 
 class Wind(models.Model):
-    created_at = models.DateTimeField(default=datetime.now, blank=True)
+    created_at = models.DateTimeField(default=timezone.now, blank=True)
     wind_speed = models.IntegerField(null=False)
     highest_gust = models.IntegerField(null=False)
 
