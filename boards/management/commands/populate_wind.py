@@ -57,16 +57,16 @@ class Command(BaseCommand):
 
                         currVal = int(currValStr)
                         highVal = int(highValStr)
-
+                        prevGust = highVal
+                        prevWind = currVal
                     except ValueError:
                         currVal = prevWind
                         highVal = prevGust
+                        print('Error-')
 
+                    if highVal + currVal != 0:
+                        Wind(wind_speed=currVal, highest_gust=highVal).save()
                     dt = datetime.now()
-                    Wind(wind_speed=currVal, highest_gust=highVal).save()
-                    prevGust=highVal
-                    prevWind=currVal
-
                     print(dt.strftime("%m/%d/%Y, %H:%M:%S") + ' : ' + label + ' ' + str(currVal) + ' : ' + str(highVal))
 
                     break
