@@ -181,10 +181,10 @@ def graph(request):
     df = read_frame(wf)
 
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=df.created_at, y=df['wind_speed'], name="Windspeed",
+    fig.add_trace(go.Scatter(x=df.created_at, y=df['wind_speed'], name="Wind Speed",
                              line_color='deepskyblue'))
 
-    fig.add_trace(go.Scatter(x=df.created_at, y=df['highest_gust'], name="Gustspeed",
+    fig.add_trace(go.Scatter(x=df.created_at, y=df['highest_gust'], name="Gust Speed",
                              line_color='dimgray'))
 
     fig.update_layout(title_text='Wind Speed',
