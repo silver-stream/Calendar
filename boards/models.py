@@ -45,4 +45,11 @@ class Wind(models.Model):
     highest_gust = models.IntegerField(null=False)
 
 
+class AverageWind(models.Model):
+    average_wind = models.BigIntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False  # Created from a view. Don't remove.
+        db_table = 'average_wind'
+
 

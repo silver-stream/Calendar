@@ -20,7 +20,7 @@ from django.shortcuts import render
 
 from django.views.generic import CreateView, TemplateView
 
-from .models import Board
+from .models import Board, AverageWind
 from .models import Category
 
 from .models import Wind
@@ -178,6 +178,15 @@ def add_event(
 def graph(request):
 
     wf = Wind.objects.all()
+
+    avgWind = AverageWind.objects.all()
+    print(avgWind.query)
+    aw = int(0)
+
+    for x in avgWind:
+        aw= x.average_wind
+    print (aw);
+
     df = read_frame(wf)
 
     fig = go.Figure()
@@ -189,7 +198,11 @@ def graph(request):
 
     fig.update_layout(title_text='Wind Speed',
                       xaxis_rangeslider_visible=True)
+    fig.update_layout(
+        autosize=False,
+        width=1200,
+        height=1000)
 
     div = opy.plot(fig, auto_open=False, output_type='div')
 
-    return render(request, 'graph.html', {'graph': div})
+    return render(request, 'graph.html', {'graph': div, 'average': aw})
