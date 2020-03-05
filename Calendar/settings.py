@@ -31,6 +31,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(9#12*3d#bq4_+e9##^j+ppn2+2@t^d^3*+j@k4d*imrkb3p=1'
 DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+DATABASE_URL='postgres://u_boards:BcAZoYWsJbvE7RMgBPzxOCexPRVAq@rivertide.co.uk:5432/django_boards'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
