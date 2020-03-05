@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
+
 {% block content %}
+    <div class="container">
+      <ol class="breadcrumb my-4">
+      Average Wind Speed : {{average}}
+      </ol>
+    </div>
+
 {% if graph %}
-<div style="width:600;height:500">
+<div style="width:800;height:600">
 {{ graph|safe }}
 </div>
 {% endif %}
