@@ -19,7 +19,7 @@ from boards import views
 from django.conf.urls import url
 
 urlpatterns = [
-    url(r'^$', views.table, name='home'),
+    url(r'^$', views.graph, name='home'),
     path('admin/', admin.site.urls),
     path('oxford/',views.oxford),
     path('shift/',views.shift,name='shift'),
