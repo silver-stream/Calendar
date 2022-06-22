@@ -12,7 +12,7 @@ django-pandas==0.6.1
 html5lib==1.0.1
 idna==2.8
 mechanize==0.4.5
-numpy==1.18.1
+numpy==1.22.0
 pandas==1.0.1
 plotly==4.5.2
 psycopg2-binary==2.8.4
