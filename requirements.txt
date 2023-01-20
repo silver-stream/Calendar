@@ -11,7 +11,7 @@ django-forms-bootstrap==3.1.0
 django-pandas==0.6.1
 html5lib==1.0.1
 idna==2.8
-mechanize==0.4.5
+mechanize==0.4.6
 numpy==1.18.1
 pandas==1.0.1
 plotly==4.5.2
